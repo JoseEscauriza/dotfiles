@@ -12,3 +12,7 @@
 
 pkg/
 src/
+
+./git/gitconfig.local.symlink
+
+./.config/assets/
