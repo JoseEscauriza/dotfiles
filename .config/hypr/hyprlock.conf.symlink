@@ -2,6 +2,9 @@ background {
     path = ~/.config/assets/nsx_dark.jpg
     blur_passes = 3
     blur_size = 5
+    noise = 0.02
+    contrast = 1.1
+    brightness = 0.9
   }
 
   label {
