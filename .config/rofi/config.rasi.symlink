@@ -1,0 +1,10 @@
+configuration {
+    modi: "drun,run";
+    show-icons: true;
+    icon-theme: "Papirus";
+    display-drun: "Apps";
+    display-run: "Run";
+}
+
+@theme "~/.config/rofi/themes/osaka-jade.rasi"
+

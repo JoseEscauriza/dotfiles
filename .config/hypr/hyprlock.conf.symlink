@@ -1,5 +1,5 @@
 background {
-    path = ~/.config/assets/nsx_dark.jpg
+    path = ~/.config/assets/1-osaka-jade-bg.jpg
     blur_passes = 3
     blur_size = 5
     noise = 0.02

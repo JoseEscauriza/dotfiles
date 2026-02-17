@@ -1,0 +1,175 @@
+* {
+    font: "JetBrainsMono Nerd Font Mono 12";
+
+    background:     #111C18;
+    background-alt: #C1C497;
+    foreground:     #111C18;
+    selected:       #C1C497;
+    selected-alt:   #D7C995;
+    active:         #7aa89f;
+    urgent:         #FF5345;
+    transparent:    rgba(0,0,0,0);
+    backlight:      #ccffeedd;
+    border:         #509475;
+    accent:         #63b07a;
+    dark-accent:    #23372B;
+    live-accent:    #459451;
+}
+
+window {
+    location: center;
+    anchor: center;
+    transparency: "real";
+    padding: 10px;
+    border: 2px;
+    border-radius: 12px;
+    border-color: @border;
+    background-color: @background;
+    children: [mainbox];
+    orientation: horizontal;
+}
+
+mainbox {
+    spacing: 0;
+    children: [ inputbar, message, listview ];
+    background-color: @background;
+}
+
+message {
+    border-color: @border;
+    border: 2px;
+    border-radius: 12px;
+    padding: 5;
+    background-color: @background;
+    font: "JetBrainsMono Nerd Font 10";
+    color: @selected-alt;
+}
+
+inputbar {
+    padding: 12px;
+    margin: 0px 0px 6px 0px;
+    border: 2px;
+    border-radius: 8px;
+    border-color: @border;
+    background-color: @background;
+}
+
+entry,prompt,case-indicator {
+    text-font: inherit;
+    text-color: @accent;
+    background-color: @background;
+}
+
+entry {
+    placeholder: "Search";
+    placeholder-color: @selected-alt;
+    text-color: @selected-alt;
+}
+
+prompt {
+    margin: 0px 0.3em 0em 0em;
+}
+
+listview {
+    dynamic: false;
+    lines: 8;
+    spacing: 6px;
+    padding: 8px;
+    background-color: @background;
+}
+
+element {
+    padding: 8px;
+    border-radius: 8px;
+    border: 2px;
+    border-radius: 12px;
+    border-color: @border;
+    background-color: @background;
+    color: @foreground;
+    text-color: @background-alt;
+    font: inherit;
+}
+
+element-icon {
+    background-color: inherit;
+    size: calc(((100% - 35em) / 7 ));
+  }
+
+element-text {
+  padding: 0px 0px 0px 12px;
+    background-color: inherit;
+    text-color: inherit;
+    vertical-align: 0.5;
+    font: "JetBrainsMono Nerd Font 16";
+  }
+
+element selected.normal {
+    background-color: @selected;
+    text-color: @background;
+}
+
+element normal active {
+    foreground: @active;
+}
+
+element normal urgent {
+    foreground: @urgent;
+}
+element alternate normal {
+}
+element alternate active {
+    foreground: @active;
+}
+element alternate urgent {
+    foreground: @urgent;
+}
+element selected active {
+    background-color: @selected-alt;
+    foreground: @foreground;
+}
+element selected urgent {
+    background-color: @urgent;
+    foreground: @foreground;
+}
+element normal normal {
+
+}
+vertb {
+    expand: false;
+    children: [ dummy0, mode-switcher, dummy1  ];
+}
+dummy0,  dummy1 {
+    expand: true;
+}
+mode-switcher {
+    expand: false;
+    orientation: vertical;
+    spacing: 0px;
+    border: 2px;
+    border-radius: 12px;
+}
+button {
+    padding: 6px;
+    border: 2px;
+    border-radius: 12px;
+    background-color: @background;
+    border-color: @border;
+    color: @foreground;
+    horizontal-align: 0.5;
+}
+button selected normal {
+    color: @selected;
+    border: 2px;
+    border-radius: 12px;
+    background-color: @backlight;
+    border-color: @border;
+}
+error-message {
+    expand: true;
+    background-color: @urgent;
+    border-color: @background-alt;
+    border: 2px;
+    border-radius: 12px;
+    padding: 1em;
+}
+
