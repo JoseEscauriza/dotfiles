@@ -85,8 +85,8 @@ env = HYPRCURSOR_SIZE,24
 #####################
 
 # Refer to https://wiki.hypr.land/Configuring/Variables/
-
 # https://wiki.hypr.land/Configuring/Variables/#general
+
 general {
     gaps_in = 5
     gaps_out = 10
@@ -255,6 +255,8 @@ bind = $mainMod, R, exec, $menu
 bind = $mainMod, P, pseudo, # dwindle
 bind = $mainMod, J, togglesplit, # dwindle
 bind = $mainMod, L, exec, hyprlock
+bind = $mainMod, F, fullscreen
+bind = SUPER, PRINT, exec, grim -g "$(slurp)" - | wl-copy
 
 # Move focus with mainMod + arrow keys
 bind = $mainMod, left, movefocus, l

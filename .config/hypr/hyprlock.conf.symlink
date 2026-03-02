@@ -1,5 +1,5 @@
 background {
-    path = ~/.config/assets/1-osaka-jade-bg.jpg
+    path = ~/.config/assets/2-shaded-entrance.jpg
     blur_passes = 3
     blur_size = 5
     noise = 0.02
