@@ -259,8 +259,8 @@ bind = $mainMod, P, pseudo, # dwindle
 bind = $mainMod, J, togglesplit, # dwindle
 bind = $mainMod, L, exec, hyprlock
 bind = $mainMod, F, fullscreen
-bind = SUPER, PRINT, exec, grim -g "$(slurp)" - | wl-copy
-bind = $mainMod, S, exec, str
+bind = $mainMod, PRINT, exec, grim -g "$(slurp)" - | wl-copy
+bind = $mainMod, S, exec, systemctl suspend
 
 # Move focus with mainMod + arrow keys
 bind = $mainMod, left, movefocus, l
@@ -361,5 +361,4 @@ windowrule {
 #####################
 # USER DEFINED RULES#
 #####################
-
 

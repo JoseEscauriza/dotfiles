@@ -1,0 +1,8 @@
+apple-fonts
+bambustudio-bin
+bambustudio-bin-debug
+brave-bin
+neofetch
+stoat-desktop-bin
+yay
+yay-debug
