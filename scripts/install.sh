@@ -8,7 +8,7 @@ set -e
 sudo pacman -Syu --noconfirm
 
 # Install official Packages
-sudo pacman -S --needed --noconfirm - <packages/package_list.txt
+sudo pacman -S --needed --noconfirm - <package_list.txt
 # Install yay if missing
 if ! command -v yay &>/dev/null; then
   sudo pacman -S --needed git base-devel
@@ -19,7 +19,7 @@ if ! command -v yay &>/dev/null; then
 fi
 
 # Install AUR Packages
-yay -S --needed --noconfirm - <packages/aur_list.txt
+yay -S --needed --noconfirm - <aur_list.txt
 
 # Install oh-my-zsh
 cd ~
