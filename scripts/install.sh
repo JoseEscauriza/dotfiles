@@ -9,7 +9,13 @@ sudo pacman -Syu --noconfirm
 
 # Install official Packages
 while read -r pkg; do
-  sudo pacman -S --needed --noconfirm - <"$pkg"
+  [ -z "$pkg" ] && continue
+
+  if pacman -Si "$pkg" &>/dev/null; then
+    sudo pacman -S --needed --noconfirm "$pkg"
+  else
+    echo "Not in repo: $pkg"
+  fi
 done <package_list.txt
 
 # Install yay if missing
