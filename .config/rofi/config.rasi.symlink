@@ -6,5 +6,7 @@ configuration {
     display-run: "Run";
 }
 
-@theme "~/.config/rofi/themes/osaka-jade.rasi"
+//@theme "~/.config/rofi/themes/osaka-jade.rasi"
 
+
+@theme "/home/jose/.config/rofi/themes/osaka-jade.rasi"
