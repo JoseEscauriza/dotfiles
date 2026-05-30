@@ -190,10 +190,10 @@ animations {
 # }
 
 # See https://wiki.hypr.land/Configuring/Dwindle-Layout/ for more
-dwindle {
-    pseudotile = true # Master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
-    preserve_split = true # You probably want this
-}
+#dwindle {
+#    pseudotile = true # Master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
+#    preserve_split = true # You probably want this
+#}
 
 # See https://wiki.hypr.land/Configuring/Master-Layout/ for more
 master {
@@ -249,13 +249,11 @@ $mainMod = SUPER # Sets "Windows" key as main modifier
 # Example binds, see https://wiki.hypr.land/Configuring/Binds/ for more
 bind = $mainMod, Q, exec, $terminal
 bind = $mainMod, C, killactive,
-bind = $mainMod, M, exec, shutdown -h now
+bind = $mainMod, M, exec, systemctl poweroff
 bind = $mainMod, E, exec, $fileManager
 bind = $mainMod, V, togglefloating,
 bind = $mainMod, R, exec, $menu
-bind = $mainMod, P, pseudo, # dwindle
-bind = $mainMod, J, togglesplit, # dwindle
-bind = $mainMod, L, exec, hyprlock
+bind = $mainMod, L, exec, hyprrock
 bind = $mainMod, F, fullscreen
 bind = $mainMod, PRINT, exec, grim -g "$(slurp)" - | wl-copy
 bind = $mainMod, S, exec, systemctl suspend
