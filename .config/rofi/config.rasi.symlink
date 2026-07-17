@@ -6,4 +6,13 @@ configuration {
     display-run: "Run";
 }
 
+<<<<<<< HEAD
 @theme "/home/jose/.config/rofi/themes/osaka-jade.rasi"
+=======
+drun {
+    sort: true;
+  }
+
+@theme "~/.config/rofi/themes/osaka-jade.rasi"
+
+>>>>>>> 5ac502d (rasi menu sorting)
