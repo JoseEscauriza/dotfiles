@@ -114,7 +114,6 @@ alias up="docker compose up -d"
 alias down="docker compose down"
 alias du="docker compose down && docker compose up -d"
 alias str='systemctl suspend'
-alias akbp='cd ~/Desktop/AKBP/'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
