@@ -113,7 +113,10 @@ alias update="sudo pacman -Syu --noconfirm"
 alias up="docker compose up -d"
 alias down="docker compose down"
 alias du="docker compose down && docker compose up -d"
+alias dlogs="docker compose logs -f"
 alias str='systemctl suspend'
+alias kromatic='cd ~/Desktop/kromatic/'
+alias piggy='cd ~/Desktop/Piggy/'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
