@@ -1,0 +1,60 @@
+# ~/.config/swaylock/config
+# Gruvbox look to match the SDDM theme.
+# Colors are RRGGBBAA (no '#').
+#
+# Palette: bg 282828 | border 504945 | text ebdbb2 | muted a89984
+#          accent d79921 | error fb4934 | ok b8bb26 | warn fabd2f
+
+# ---------------- Background ----------------
+image=~/.config/assets/1-glowing-city.jpg
+scaling=fill
+color=000000
+
+# ---------------- Behaviour ----------------
+ignore-empty-password
+show-failed-attempts
+indicator-caps-lock
+
+# ---------------- Font ----------------
+font=JetBrainsMono Nerd Font Mono
+font-size=22
+
+# ---------------- Indicator ring ----------------
+indicator-idle-visible
+indicator-radius=90
+indicator-thickness=6
+
+# Inner circle
+inside-color=282828ee
+inside-clear-color=282828ee
+inside-caps-lock-color=282828ee
+inside-ver-color=282828ee
+inside-wrong-color=282828ee
+
+# Outer ring
+ring-color=504945ff
+ring-clear-color=a89984ff
+ring-caps-lock-color=fabd2fff
+ring-ver-color=b8bb26ff
+ring-wrong-color=fb4934ff
+
+# Key / backspace highlights on the ring
+key-hl-color=d79921ff
+bs-hl-color=fb4934ff
+caps-lock-key-hl-color=fabd2fff
+caps-lock-bs-hl-color=fb4934ff
+
+# Hide the separators and the border lines
+separator-color=00000000
+line-color=00000000
+line-clear-color=00000000
+line-caps-lock-color=00000000
+line-ver-color=00000000
+line-wrong-color=00000000
+
+# Text inside the ring
+text-color=ebdbb2ff
+text-clear-color=ebdbb2ff
+text-caps-lock-color=fabd2fff
+text-ver-color=b8bb26ff
+text-wrong-color=fb4934ff
