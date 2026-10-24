@@ -1,0 +1,109 @@
+import QtQuick 2.15
+import QtQuick.Controls 2.15
+import SddmComponents 2.0
+
+Rectangle {
+    id: root
+    width: 1920
+    height: 1080
+    color: "black"
+
+    Image {
+        anchors.fill: parent
+        source: config.background
+        fillMode: Image.PreserveAspectCrop
+    }
+
+    Text {
+        text: "Welcome"
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.verticalCenter: parent.verticalCenter
+        anchors.verticalCenterOffset: -120
+        font.pixelSize: 42
+        font.bold: true
+        color: "#ebdbb2"
+    }
+
+    Column {
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.verticalCenter: parent.verticalCenter
+        spacing: 16
+
+        PasswordBox {
+            id: passwordBox
+            width: 300
+            focus: true
+
+            Keys.onReturnPressed: login()
+            Keys.onEnterPressed: login()
+        }
+
+        Button {
+            text: "Login"
+            width: 300
+            onClicked: login()
+        }
+    }
+
+    function login() {
+        sddm.login("jose", passwordBox.text, "")
+    }
+
+  Row {
+    id: powerRow
+    spacing: 28
+
+    anchors.right: parent.right
+    anchors.bottom: parent.bottom
+    anchors.rightMargin: 40
+    anchors.bottomMargin: 40
+
+    // Shutdown
+    Rectangle {
+        width: 32
+        height: 32
+        color: "transparent"
+
+        Image {
+            anchors.centerIn: parent
+            width: 28
+            height: 28
+            source: "images/shutdown.svg"
+            fillMode: Image.PreserveAspectFit
+            opacity: shutdownMouse.containsMouse ? 0.7 : 1.0
+        }
+
+        MouseArea {
+            id: shutdownMouse
+            anchors.fill: parent
+            hoverEnabled: true
+            cursorShape: Qt.PointingHandCursor
+            onClicked: sddm.powerOff()
+        }
+    }
+
+    // Restart
+    Rectangle {
+        width: 32
+        height: 32
+        color: "transparent"
+
+        Image {
+            anchors.centerIn: parent
+            width: 28
+            height: 28
+            source: "images/restart.svg"
+            fillMode: Image.PreserveAspectFit
+            opacity: restartMouse.containsMouse ? 0.7 : 1.0
+        }
+
+        MouseArea {
+            id: restartMouse
+            anchors.fill: parent
+            hoverEnabled: true
+            cursorShape: Qt.PointingHandCursor
+            onClicked: sddm.reboot()
+        }
+    }
+  }
+}

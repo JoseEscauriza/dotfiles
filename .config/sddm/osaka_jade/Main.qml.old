@@ -1,0 +1,121 @@
+import QtQuick 2.15
+import QtQuick.Layouts 1.15
+import SddmComponents 2.0
+
+Rectangle {
+    id: root
+    anchors.fill: parent
+    color: "black"
+
+    /* ---------------- Background ---------------- */
+
+    Image {
+        anchors.fill: parent
+        source: config.background
+        fillMode: Image.PreserveAspectCrop
+    }
+
+    /* ---------------- Center Content ---------------- */
+
+    Column {
+        id: centerColumn
+        anchors.centerIn: parent
+        spacing: 28
+        width: 360
+
+        Text {
+            text: "Welcome"
+            anchors.horizontalCenter: parent.horizontalCenter
+            font.family: "JetBrainsMono Nerd Font Mono"
+            font.pixelSize: 42
+            font.bold: true
+            color: "#ebdbb2"
+        }
+
+        Rectangle {
+            width: parent.width
+            height: 46
+            radius: 6
+            color: "#282828"
+            border.color: "#504945"
+            border.width: 1
+
+            PasswordBox {
+                id: passwordBox
+                anchors.fill: parent
+                anchors.margins: 10
+                focus: true
+
+                Keys.onReturnPressed: login()
+                Keys.onEnterPressed: login()
+            }
+        }
+    }
+
+    function login() {
+        sddm.login("jose", passwordBox.text, "")
+    }
+
+    /* ---------------- Power Controls ---------------- */
+
+    Row {
+        id: powerRow
+        spacing: 32
+
+        anchors.right: parent.right
+        anchors.bottom: parent.bottom
+        anchors.rightMargin: 40
+        anchors.bottomMargin: 40
+
+        // Shutdown
+        Rectangle {
+            width: 32
+            height: 32
+            color: "transparent"
+
+            Image {
+                id: shutdownIcon
+                anchors.centerIn: parent
+                width: 26
+                height: 26
+                source: "images/shutdown.svg"
+                fillMode: Image.PreserveAspectFit
+                opacity: shutdownMouse.containsMouse ? 0.7 : 1.0
+            }
+
+            MouseArea {
+                id: shutdownMouse
+                anchors.fill: parent
+                hoverEnabled: true
+                cursorShape: Qt.PointingHandCursor
+                onClicked: sddm.powerOff()
+            }
+        }
+
+        // Restart
+        Rectangle {
+            width: 32
+            height: 32
+            color: "transparent"
+
+            Image {
+                id: restartIcon
+                anchors.centerIn: parent
+                width: 26
+                height: 26
+                source: "images/restart.svg"
+                fillMode: Image.PreserveAspectFit
+                opacity: restartMouse.containsMouse ? 0.7 : 1.0
+            }
+
+            MouseArea {
+                id: restartMouse
+                anchors.fill: parent
+                hoverEnabled: true
+                cursorShape: Qt.PointingHandCursor
+                onClicked: sddm.reboot()
+            }
+        }
+    }
+}
+
