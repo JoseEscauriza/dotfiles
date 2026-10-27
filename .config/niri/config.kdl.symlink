@@ -166,6 +166,10 @@ spawn-at-startup "swayidle" "-w" \
   "timeout" "300" "swaylock -f" \
   "before-sleep" "swaylock -f"
 
+spawn-at-startup "xwayland-satellite"
+environment {
+    DISPLAY ":0"
+  }
 
 hotkey-overlay {
   skip-at-startup
