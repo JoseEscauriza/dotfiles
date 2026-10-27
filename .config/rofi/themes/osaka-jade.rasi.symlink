@@ -92,7 +92,7 @@ element {
 
 element-icon {
     background-color: inherit;
-    size: calc(((100% - 35em) / 7 ));
+    size: calc(((100% - 25em) / 7 ));
   }
 
 element-text {
